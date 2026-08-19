@@ -1,8 +1,16 @@
 name: Shared Security Scan
 
+# workflow_call: FE BE의 CI파일에서 호출하여 실행
 on:
   workflow_call:
 
+# secret-scan name: 화면에 표시되는 작업 이름 / runs-on: 어떤 OS에서 실행할지 지정(현재 우분투 리눅스 환경)
+
+# steps: 순서대로 실행될 단계 목록
+# 1. Checkout Code: 현재 워크플로우를 호출한 레포지토리의 소스코드를 가상 머신 위로 다운로드
+# fetch-depth: 0, 전체 커밋 히스토리 가져오기(시크릿 커밋도 찾아내는 용도)
+# 2. Run Gitleaks: 오픈소스 보안 스캔 도구 Gitleaks 실행, 하드코딩 비밀번호나 토큰 탐지하는 보안 사항
+# 기본 제공되는 GITHUB_TOKEN을 사용하여 현재 레포 접근 권한 부여. 추후 추가 기능 필요 시, setting에서 토큰 개별 등록 필요
 jobs:
   secret-scan:
     name: Detect Hardcoded Secrets
