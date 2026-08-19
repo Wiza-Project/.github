@@ -1,0 +1,39 @@
+# IDE 설정 파일 (IntelliJ, VS Code 등)
+.idea/
+*.iml
+.vscode/
+
+# OS 파일 (맥/윈도우 임시 파일)
+.DS_Store
+Thumbs.db
+
+# 빌드 및 캐시 폴더 (필요시)
+build/
+bin/
+out/
+.gradle/
+node_modules/
+
+# --- 공통 보안 관련 항목(방어 용도의 gitignore입니다) ---
+# 환경 변수 파일 (API 키, DB 비밀번호 등)
+*.env
+*.env.local
+*.env.*.local
+.env
+
+# 클라우드 인증 정보 및 시크릿
+*.pem
+*.key
+*.pub
+*.p12
+*.crt
+*.jks
+*.gpg
+*.secret
+*.json
+!*.json # 만약 필요한 설정 파일이 있다면 예외 처리 필요
+
+# AWS, GCP, Azure 설정 파일
+.aws/
+.gcloud/
+.azure/
