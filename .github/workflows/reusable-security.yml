@@ -1,8 +1,12 @@
 name: Shared Security Scan
 
 # workflow_call: FE BE의 CI파일에서 호출하여 실행
+# GITLEAKS_LICENSE 라이선스 키 등록과 별개로, 호출하는 레포가 시크릿을 반드시 넘겨주도록 강제 설정
 on:
   workflow_call:
+    secrets:
+      GITLEAKS_LICENSE:
+        required: true
 
 # secret-scan name: 화면에 표시되는 작업 이름 / runs-on: 어떤 OS에서 실행할지 지정(현재 우분투 리눅스 환경)
 
